@@ -1,7 +1,24 @@
-<ul>
-    <ng-container *ngFor="let item of (products | async)">
-        <li>
-            {{item.title}}
-        </li>
-    </ng-container>
-</ul>
+<!-- header -->
+<header class="app-header">
+    <h1>Our Product Collection</h1>
+</header>
+
+<!-- main content -->
+<main class="product-section">
+    <!-- <ul>
+        <ng-container *ngFor="let item of (products | async)">
+            <li>{{ item.title }}</li>
+        </ng-container>
+    </ul> -->
+
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+    <app-product-card></app-product-card>
+</main>
+
+<!-- footer -->
+<footer class="app-footer">
+    <p>© 2025 WottaCore Digital Solution. All rights reserved.</p>
+</footer>

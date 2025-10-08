@@ -1,21 +1,21 @@
 <!-- header -->
 <header class="app-header">
-    <h1>Our Product Collection</h1>
+  <h1>Our Product Collection</h1>
+  <button class="cart-btn" [routerLink]="['/Cart']" routerLinkActive="active" >
+    🛒 Cart
+  </button>
 </header>
-
 <!-- main content -->
 <main class="product-section">
-    <!-- <ul>
-        <ng-container *ngFor="let item of (products | async)">
-            <li>{{ item.title }}</li>
-        </ng-container>
-    </ul> -->
 
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
+@for (product of products |async ; track product.id) {
+  <div>
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+} @empty {
+  <p>No products found</p>
+}
+    
 </main>
 
 <!-- footer -->

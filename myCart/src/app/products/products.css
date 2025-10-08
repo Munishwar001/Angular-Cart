@@ -1,35 +1,33 @@
 .app-header {
-    text-align: center;
-    background: linear-gradient(90deg, #007bff, #6610f2);
-    color: white;
-    padding: 20px 0;
-    border-radius: 8px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  color: white;
+  padding: 10px 20px;              
+  border-radius: 8px;
 }
 
-.product-section {
-    margin: 20px auto;
-    max-width: 1200px;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    /* ✅ Flex layout for product cards */
-    display: flex;
-    flex-wrap: wrap;
-    /* Allows wrapping to the next line */
-    justify-content: center;
-    /* Centers cards horizontally */
-    gap: 20px;
-    /* Space between cards */
+.app-header h1 {
+  font-size: 1.5rem;               
+  margin: 0;
 }
 
-.product-section app-product-card {
-    flex: 1 1 250px;
-    /* Each card takes up min 250px width */
-    max-width: 300px;
+.cart-btn {
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.cart-btn:hover {
+  background-color: #e6e6e6;
+}
 .app-footer {
     text-align: center;
     background-color: #222;
@@ -40,13 +38,12 @@
 }
 .product-section {
     margin: 20px auto;
-    max-width: 1300px;
+    /* max-width: 100vh; */
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-    /* Make it a flexible, responsive row */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -54,26 +51,20 @@
     gap: 20px;
 }
 
-/* ✅ Important: This ensures each Angular component behaves like a card */
 .product-section app-product-card {
-    display: block;
-    flex: 1 1 calc(33.333% - 40px);
-    /* 3 cards per row */
-    max-width: 400px;
-    box-sizing: border-box;
+    flex: 1 1 calc(25% - 20px); 
+    max-width: 300px;
 }
 
-/* ✅ Responsive design */
+
 @media (max-width: 1024px) {
     .product-section app-product-card {
         flex: 1 1 calc(50% - 40px);
-        /* 2 cards per row on tablet */
     }
 }
 
 @media (max-width: 768px) {
     .product-section app-product-card {
         flex: 1 1 100%;
-        /* 1 card per row on mobile */
     }
 }
